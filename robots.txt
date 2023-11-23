@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://maolonglong.github.io/hugo-simple/sitemap.xml

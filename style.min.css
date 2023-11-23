@@ -1,0 +1,1 @@
+nav a.current{color:var(--accent)!important;border-color:var(--accent)!important}div.pagination{display:flex;justify-content:space-between}ul.blog-posts{padding-left:0}ul.blog-posts>li{list-style-type:none;display:flex}ul.blog-posts>li>span{flex:0 0 130px}
