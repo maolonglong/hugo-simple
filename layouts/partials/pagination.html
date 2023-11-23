@@ -1,0 +1,12 @@
+<div class="pagination">
+  <a {{ if .Paginator.HasPrev }}href="{{ .Paginator.Prev.URL }}"{{ else }}style="visibility: hidden;"{{ end }}>
+    <span>←</span>
+    <span>Newer posts</span>
+  </a>
+  {{ if .Paginator.HasNext }}
+  <a href="{{ .Paginator.Next.URL }}">
+    <span>Older posts</span>
+    <span>→</span>
+  </a>
+  {{ end }}
+</div>

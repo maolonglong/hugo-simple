@@ -1,0 +1,18 @@
+name = "Hugo Simple"
+license = "MIT"
+licenselink = "https://github.com/maolonglong/hugo-simple/LICENSE"
+description = "A minimal hugo theme"
+homepage = "https://github.com/maolonglong/hugo-simple"
+demosite = "https://maolonglong.github.io/hugo-simple"
+
+tags = ["blog", "minimal", "fast", "dark mode"]
+features = ["favicon", "no javascript", "rss", "dark mode"]
+
+[author]
+  name = "Shaolong Chen"
+  homepage = "https://chensl.me"
+
+[original]
+  author = "Caio Lente"
+  homepage = "https://lente.dev"
+  repo = "https://github.com/clente/hugo-bearcub"

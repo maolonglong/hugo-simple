@@ -1,0 +1,5 @@
+{{ $currentPage := . -}}
+{{ range .Site.Menus.main.ByWeight }}
+  <a href="{{ .URL }}" {{ if eq $currentPage .Page }} class="current"{{ end }}>{{ .Name }}</a>
+{{ end }}
+<a href='{{ absURL "index.xml" }}'>RSS</a>

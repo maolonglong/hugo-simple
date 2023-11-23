@@ -1,0 +1,41 @@
+# Basic config
+baseURL = "https://example.com"
+theme = "hugo-simple"
+languageCode = "en" # zh-Hans
+
+title = "Hugo Simple"
+
+# Generate a nice robots.txt for SEO
+enableRobotsTXT = true
+
+# Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
+disableKinds = ["taxonomy"]
+# ignoreErrors = ["error-disable-taxonomy"]
+[permalinks]
+  blog = "/:slug/"
+  tags = "/blog/:slug"
+
+[markup]
+  [markup.highlight]
+    lineNos = true
+    lineNumbersInTable = false
+    noClasses = false
+
+[params.author]
+  name = "Shaolong Chen"
+
+[params]
+  description = "Hugo Simple Demo"
+  favicon = "images/favicon.png"
+  dateFormat = "2006-01-02"
+  hideMadeWithLine = false
+
+[menu]
+  [[menu.main]]
+      name = 'Home'
+      pageRef = '/'
+      weight = 10
+  [[menu.main]]
+      name = 'Blog'
+      pageRef = '/blog'
+      weight = 20

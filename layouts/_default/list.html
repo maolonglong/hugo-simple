@@ -1,0 +1,44 @@
+{{ define "main" }}
+<content>
+  {{ if .Data.Singular }}
+    <h3>Filtering for "{{ .Title }}"</h3>
+    <small>
+      <a href="{{ relURL "blog" }}">Remove filter</a>
+    </small>
+  {{ end }}
+  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+    {{- partial "pagination.html" . -}}
+  {{ end }}
+  <ul class="blog-posts">
+    {{ range .Paginator.Pages }}
+    <li>
+      <span>
+        <i>
+          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+            {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </span>
+      {{ if .Params.link }}
+        <a href="{{ .Params.link }}" target="_blank">{{ .Title }} ↪</a>
+      {{ else }}
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      {{ end }}
+    </li>
+    {{ else }}
+    <li>
+      No posts yet
+    </li>
+    {{ end }}
+  </ul>
+  {{ if not .Data.Singular }}
+    <small>
+      <div>
+        {{ range .Site.Taxonomies.tags }}
+        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;&nbsp;
+        {{ end }}
+      </div>
+    </small>
+  {{ end }}
+</content>
+{{ end }}
