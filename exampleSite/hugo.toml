@@ -16,6 +16,11 @@ disableKinds = ["taxonomy"]
   tags = "/blog/:slug"
 
 [markup]
+  [markup.goldmark.renderer]
+    unsafe= true
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
   [markup.highlight]
     lineNos = true
     lineNumbersInTable = false

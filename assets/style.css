@@ -20,3 +20,7 @@ ul.blog-posts > li {
 ul.blog-posts > li > span {
   flex: 0 0 130px;
 }
+
+nav#TableOfContents > ul {
+  margin-block-start: 0;
+}
