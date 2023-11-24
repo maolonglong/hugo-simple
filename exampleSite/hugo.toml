@@ -2,8 +2,8 @@
 baseURL = "https://example.com"
 theme = "hugo-simple"
 languageCode = "en" # zh-Hans
-
 title = "Hugo Simple"
+copyright = "© 2023 Shaolong Chen"
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
@@ -12,7 +12,7 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 # ignoreErrors = ["error-disable-taxonomy"]
 [permalinks]
-  blog = "/:slug/"
+  blog = "/:slugorfilename/"
   tags = "/blog/:slug"
 
 [markup]
@@ -21,14 +21,14 @@ disableKinds = ["taxonomy"]
     lineNumbersInTable = false
     noClasses = false
 
-[params.author]
-  name = "Shaolong Chen"
-
 [params]
   description = "Hugo Simple Demo"
   favicon = "images/favicon.png"
   dateFormat = "2006-01-02"
   hideMadeWithLine = false
+  [params.author]
+    name = "Shaolong Chen"
+    email = "shaolong.chen@outlook.it"
 
 [menu]
   [[menu.main]]
@@ -39,3 +39,11 @@ disableKinds = ["taxonomy"]
       name = 'Blog'
       pageRef = '/blog'
       weight = 20
+
+[services]
+  [services.rss]
+    limit = 42
+
+[outputs]
+  # Disable section RSS
+  section = ['html']
