@@ -66,6 +66,7 @@
 
 
 
+
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
@@ -93,7 +94,9 @@
 
 
 
-<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
+
+
+  <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="ln"> 1</span><span class="cl"><span class="cp">&lt;!doctype html&gt;</span>
 </span></span><span class="line"><span class="ln"> 2</span><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="ln"> 3</span><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="ln"> 4</span><span class="cl">  <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;utf-8&#34;</span><span class="p">&gt;</span>
@@ -103,6 +106,7 @@
 </span></span><span class="line"><span class="ln"> 8</span><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Test<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="ln"> 9</span><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span></span><span class="line"><span class="ln">10</span><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span></span></span></code></pre></div>
+
 
 <h2 id="list-types">List Types</h2>
 <h3 id="ordered-list">Ordered List</h3>
