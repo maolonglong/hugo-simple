@@ -1,8 +1,11 @@
 .direnv/
+node_modules/
 public/
 resources/
 
+.DS_Store
+.hugo_build.lock
+package-lock.json
 result
 result-*
-
-.hugo_build.lock
+yarn.lock
