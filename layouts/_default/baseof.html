@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {{- partial "favicon.html" . -}}
     <title>
-      {{- block "title" . }}
+      {{- block "title" . -}}
         {{ with .Title }}{{ . }} |{{ end }}{{ .Site.Title }}
-      {{- end }}
+      {{- end -}}
     </title>
 
     {{- partial "seo_tags.html" . -}}

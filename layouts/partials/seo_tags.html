@@ -1,34 +1,33 @@
 <!-- Primary Meta Tags -->
 <meta
   name="title"
-  content="{{ with .Title }}
+  content="{{ with .Title -}}
     {{ . }}
-  {{ else }}
+  {{- else -}}
     {{ .Site.Title }}
-  {{ end }}"
+  {{- end }}"
 />
 <meta
   name="description"
-  content="{{ with .Description }}
+  content="{{ with .Description -}}
     {{ . }}
-  {{ else }}
-    {{ if .IsPage }}
+  {{- else -}}
+    {{ if .IsPage -}}
       {{ .Summary }}
-    {{ else }}
+    {{- else -}}
       {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{ end }}
-  {{ end }}"
+    {{- end }}
+  {{- end }}"
 />
 <meta
   name="keywords"
-  content="{{ if .IsPage }}
+  content="{{ if .IsPage -}}
     {{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}
-  {{ else }}
-    {{ range $plural, $terms := .Site.Taxonomies }}
+  {{- else -}}
+    {{ range $plural, $terms := .Site.Taxonomies -}}
       {{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}
-    {{ end }}
-
-  {{ end }}
+    {{- end }}
+  {{- end -}}
   "
 />
 
