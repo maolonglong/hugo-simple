@@ -17,7 +17,15 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in {
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs = with pkgs; [hugo just];
+          nativeBuildInputs = with pkgs; [
+            hugo
+            just
+            bun
+          ];
+
+          shellHook = ''
+            [ -d "$PWD/node_modules" ] || bun install
+          '';
         };
       }
     );

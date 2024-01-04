@@ -20,6 +20,10 @@ jobs:
         with:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Check code format
+        shell: bash
+        run: nix develop --command bun run prettier "layouts/**/*.html" --check
+
       - name: Build
         run: nix develop --command just build
 
