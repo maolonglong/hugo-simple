@@ -17,10 +17,27 @@ ul.blog-posts > li {
   display: flex;
 }
 
-ul.blog-posts > li > span {
+ul.blog-posts > li span {
   flex: 0 0 130px;
+  color: var(--text-light);
 }
 
 nav#TableOfContents > ul {
   margin-block-start: 0;
+}
+
+main > p:first-child time {
+  color: var(--text-light);
+}
+
+.icon {
+  vertical-align: sub;
+  padding-right: 0.25rem;
+  display: inline-block;
+  width: 1em;
+  height: 1.3em;
+  margin-right: 0.2rem;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
