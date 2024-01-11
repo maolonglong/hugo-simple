@@ -11,7 +11,7 @@
       </p>
     {{ end }}
   {{ end }}
-  {{ if and (gt .WordCount 400 ) (.Params.toc) }}
+  {{ if .Params.toc }}
     <details>
       <summary>Table of Contents</summary>
       {{ .TableOfContents }}
