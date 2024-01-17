@@ -27,7 +27,8 @@ disableKinds = ["taxonomy"]
   [markup.highlight]
     lineNos = true
     lineNumbersInTable = false
-    noClasses = false
+    noClasses = true
+    style = "catppuccin-mocha"
 
 [params]
   description = "Hugo Simple Demo"

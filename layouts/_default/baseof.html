@@ -20,11 +20,6 @@
     {{ $style := resources.Get "style.css" | minify }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
 
-    {{ if (.Page.Store.Get "hasCodeBlock") }}
-      {{ $syntax := resources.Get "syntax.css" | minify }}
-      <link href="{{ $syntax.RelPermalink }}" rel="stylesheet" />
-    {{ end }}
-
     {{ with .Params.style }}
       {{ $extra := resources.Get . | minify }}
       <link href="{{ $extra.RelPermalink }}" rel="stylesheet" />
