@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "fmt": "prettier \"layouts/**/*.html\" --write"
+    "fmt": "prettier layouts/**/*.html assets/style.css --write"
   },
   "devDependencies": {
     "prettier": "^3.1.0",

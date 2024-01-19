@@ -1,7 +1,7 @@
 # Basic config
 baseURL = "https://example.com"
 theme = "hugo-simple"
-languageCode = "en" # zh-Hans
+languageCode = "en"                # zh-Hans
 title = "Hugo Simple"
 copyright = "© 2023 Shaolong Chen"
 
@@ -12,47 +12,44 @@ enableRobotsTXT = true
 disableKinds = ["taxonomy"]
 # ignoreErrors = ["error-disable-taxonomy"]
 [taxonomies]
-  tag = 'tags'
+tag = "tags"
 
 [permalinks]
-  blog = "/:slugorfilename/"
-  tags = "/blog/:slug"
+blog = "/:slugorfilename/"
+tags = "/blog/:slug"
 
-[markup]
-  [markup.goldmark.renderer]
-    unsafe= true
-  [markup.tableOfContents]
-    startLevel = 2
-    endLevel = 3
-  [markup.highlight]
-    lineNos = true
-    lineNumbersInTable = false
-    noClasses = true
-    style = "catppuccin-mocha"
+[markup.goldmark.renderer]
+unsafe = true
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 3
+[markup.highlight]
+lineNos = true
+lineNumbersInTable = false
+noClasses = true
+style = "catppuccin-mocha"
 
 [params]
-  description = "Hugo Simple Demo"
-  favicon = "images/favicon.png"
-  dateFormat = "2006-01-02"
-  hideMadeWithLine = false
-  [params.author]
-    name = "Shaolong Chen"
-    email = "shaolong.chen@outlook.it"
+description = "Hugo Simple Demo"
+favicon = "images/favicon.png"
+dateFormat = "2006-01-02"
+hideMadeWithLine = false
+[params.author]
+name = "Shaolong Chen"
+email = "shaolong.chen@outlook.it"
 
-[menu]
-  [[menu.main]]
-      name = 'Home'
-      pageRef = '/'
-      weight = 10
-  [[menu.main]]
-      name = 'Blog'
-      pageRef = '/blog'
-      weight = 20
+[[menu.main]]
+name = "Home"
+pageRef = "/"
+weight = 10
+[[menu.main]]
+name = "Blog"
+pageRef = "/blog"
+weight = 20
 
-[services]
-  [services.rss]
-    limit = 42
+[services.rss]
+limit = 42
 
 [outputs]
-  # Disable section RSS
-  section = ['html']
+# Disable section RSS
+section = ["html"]

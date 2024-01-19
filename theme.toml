@@ -9,10 +9,10 @@ tags = ["blog", "minimal", "fast", "dark mode"]
 features = ["favicon", "no javascript", "rss", "dark mode"]
 
 [author]
-  name = "Shaolong Chen"
-  homepage = "https://chensl.me"
+name = "Shaolong Chen"
+homepage = "https://chensl.me"
 
 [original]
-  author = "Caio Lente"
-  homepage = "https://lente.dev"
-  repo = "https://github.com/clente/hugo-bearcub"
+author = "Caio Lente"
+homepage = "https://lente.dev"
+repo = "https://github.com/clente/hugo-bearcub"

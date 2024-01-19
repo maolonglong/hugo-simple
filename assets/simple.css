@@ -15,6 +15,8 @@
   --text-light: #585858;
   --border: #898EA4;
   --accent: #0d47a1;
+  --accent-hover: #1266e2;
+  --accent-text: var(--bg);
   --code: #d81b60;
   --preformatted: #444;
   --marked: #ffdd33;
@@ -31,6 +33,8 @@
     --text: #dcdcdc;
     --text-light: #ababab;
     --accent: #ffb300;
+    --accent-hover: #ffe099;
+    --accent-text: var(--bg);
     --code: #f06292;
     --preformatted: #ccc;
     --disabled: #111;
@@ -195,13 +199,13 @@ input[type="button"],
 label[type="button"] {
   border: 1px solid var(--accent);
   background-color: var(--accent);
-  color: var(--bg);
+  color: var(--accent-text);
   padding: 0.5rem 0.9rem;
   text-decoration: none;
   line-height: normal;
 }
 
-.button[aria-disabled="true"],
+.button[aria-disabled="true"], 
 input:disabled,
 textarea:disabled,
 select:disabled,
@@ -229,7 +233,8 @@ input[type="submit"]:enabled:hover,
 input[type="reset"]:enabled:hover,
 input[type="button"]:enabled:hover,
 label[type="button"]:hover {
-  filter: brightness(1.4);
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
   cursor: pointer;
 }
 
@@ -675,15 +680,15 @@ sup {
   top: -0.4em;
 }
 
-sub {
-  top: 0.3em;
+sub { 
+  top: 0.3em; 
 }
 
 /* Classes for notices */
 .notice {
   background: var(--accent-bg);
   border: 2px solid var(--border);
-  border-radius: 5px;
+  border-radius: var(--standard-border-radius);
   padding: 1.5rem;
   margin: 2rem 0;
 }
