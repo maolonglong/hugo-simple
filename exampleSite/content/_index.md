@@ -13,8 +13,8 @@ we now think multi-megabyte webpages are normal.
 > --- [Kev Quirk](https://512kb.club/)
 
 Let's change this, one website at a time! **Hugo Simple** is a
-[Hugo](https://gohugo.io/) theme based on [Hugo
-Bear](https://github.com/janraasch/hugo-bearblog/) that takes care of speed and
+[Hugo](https://gohugo.io/) theme based on [Simple.css](https://simplecss.org/) and
+[Hugo Bear](https://github.com/janraasch/hugo-bearblog/) that takes care of speed and
 optimization, so you can focus on writing good content.
 
 It is free, multilingual, optimized for search engines, no-nonsense, responsive,

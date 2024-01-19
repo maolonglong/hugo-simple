@@ -4,7 +4,9 @@
 
 A [Hugo](https://gohugo.io/)-theme based on [Simple.css](https://simplecss.org/) and [Bear Blog](https://bearblog.dev).
 
-## Demo
+## Demo Site
+
+![](https://raw.githubusercontent.com/maolonglong/hugo-simple/main/images/tn.png)
 
 <https://maolonglong.github.io/hugo-simple/>
 
