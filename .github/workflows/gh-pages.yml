@@ -22,7 +22,7 @@ jobs:
 
       - name: Check code format
         shell: bash
-        run: nix develop --command bun run prettier "layouts/**/*.html" --check
+        run: nix develop --command just check
 
       - name: Build
         run: nix develop --command just build

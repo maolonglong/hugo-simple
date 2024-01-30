@@ -25,11 +25,21 @@
         };
 
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs = with pkgs; [
-            bun
-            hugo
-            just
-          ];
+          nativeBuildInputs =
+            [
+              (pkgs.hugo.override {
+                buildGoModule = args:
+                  pkgs.buildGoModule (args
+                    // {
+                      # Remove "extended".
+                      tags = [];
+                    });
+              })
+            ]
+            ++ (with pkgs; [
+              bun
+              just
+            ]);
 
           shellHook = ''
             [ -d "$PWD/node_modules" ] || bun install
