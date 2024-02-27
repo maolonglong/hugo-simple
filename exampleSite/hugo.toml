@@ -54,5 +54,7 @@ weight = 20
 limit = 42
 
 [outputs]
-# Disable section RSS
+# Generate RSS for home only.
 section = ["html"]
+taxonomy = ["html"]
+term = ["html"]

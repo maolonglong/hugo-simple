@@ -47,7 +47,7 @@
   <channel>
     <title>{{ .Site.Title }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Recent content {{ if ne .Title .Site.Title }}{{ with .Title }}in {{ . }} {{ end }}{{ end }}on {{ .Site.Title }}</description>
+    <description>Recent content on {{ .Site.Title }}</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>{{ site.Language.LanguageCode }}</language>{{ with $authorEmail }}
     <managingEditor>{{.}}{{ with $authorName }} ({{ . }}){{ end }}</managingEditor>{{ end }}{{ with $authorEmail }}
