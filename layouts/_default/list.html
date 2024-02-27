@@ -33,7 +33,7 @@
       <small>
         <div>
           {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;&nbsp;
+            <a href="{{ .Page.Permalink }}">#{{ .Page.LinkTitle }}</a>&nbsp;&nbsp;
           {{ end }}
         </div>
       </small>

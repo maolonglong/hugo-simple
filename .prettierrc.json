@@ -1,4 +1,5 @@
 {
+  "printWidth": 99,
   "plugins": ["prettier-plugin-go-template"],
   "overrides": [
     {

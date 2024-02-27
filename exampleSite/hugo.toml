@@ -3,10 +3,13 @@ baseURL = "https://example.com"
 theme = "hugo-simple"
 languageCode = "en"                # zh-Hans
 title = "Hugo Simple"
-copyright = "© 2023 Shaolong Chen"
+copyright = "© 2024 Shaolong Chen"
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
+
+# https://github.com/gohugoio/hugo/issues/12152
+capitalizeListTitles = false
 
 # Generate "Bearblog"-like URLs !only!, see https://bearblog.dev/.
 disableKinds = ["taxonomy"]
