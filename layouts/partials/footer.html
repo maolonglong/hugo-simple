@@ -1,4 +1,10 @@
+{{ with .Site.Copyright }}
+  <span>{{ . }}</span>
+{{ end }}
 {{ if not .Site.Params.hideMadeWithLine }}
-  Made with
-  <a href="https://github.com/maolonglong/hugo-simple/">Hugo ʕ•ᴥ•ʔ Simple</a>
+  <span>
+    {{ if .Site.Copyright }}|{{ end }}
+    Made with
+    <a href="https://github.com/maolonglong/hugo-simple/">Hugo ʕ•ᴥ•ʔ Simple</a>
+  </span>
 {{ end }}
