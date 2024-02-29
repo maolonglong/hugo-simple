@@ -33,6 +33,7 @@ noClasses = true
 style = "catppuccin-mocha"
 
 [params]
+title = "Hugo Simple"
 description = "Hugo Simple Demo"
 favicon = "images/favicon.png"
 dateFormat = "2006-01-02"

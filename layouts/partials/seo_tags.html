@@ -30,6 +30,10 @@
   {{- end -}}
   "
 />
+{{ with .Site.Params.author.name }}
+  <meta name="author" content="{{ . }}" />
+{{ end }}
+
 
 <!-- Open Graph / Facebook -->
 {{ template "_internal/opengraph.html" . }}
