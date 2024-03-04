@@ -7,7 +7,10 @@
     {{- partial "favicon.html" . -}}
     <title>
       {{- block "title" . -}}
-        {{ with .Title }}{{ . }}&nbsp;|&nbsp;{{ end }}{{ .Site.Title }}
+        {{- if not .IsHome -}}
+          {{ with .Title }}{{ . }}&nbsp;|&nbsp;{{ end }}
+        {{- end -}}
+        {{ .Site.Title }}
       {{- end -}}
     </title>
 
