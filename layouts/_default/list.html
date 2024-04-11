@@ -22,7 +22,7 @@
           {{ if .Params.link }}
             <a href="{{ .Params.link }}" target="_blank">{{ .Title }} ↪</a>
           {{ else }}
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
           {{ end }}
         </li>
       {{ else }}
@@ -33,7 +33,7 @@
       <small>
         <div>
           {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.Permalink }}">#{{ .Page.LinkTitle }}</a>&nbsp;&nbsp;
+            <a href="{{ .Page.RelPermalink }}">#{{ .Page.LinkTitle }}</a>&nbsp;&nbsp;
           {{ end }}
         </div>
       </small>

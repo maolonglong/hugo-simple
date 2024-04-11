@@ -22,7 +22,7 @@
   </content>
   <p>
     {{ range (.GetTerms "tags") }}
-      <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
+      <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
     {{ end }}
   </p>
 {{ end }}
