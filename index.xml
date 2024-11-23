@@ -1,7 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hugo Simple</title><link>https://maolonglong.github.io/hugo-simple/</link><description>Recent content on Hugo Simple</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>shaolong.chen@outlook.it (Shaolong Chen)</managingEditor><webMaster>shaolong.chen@outlook.it (Shaolong Chen)</webMaster><copyright>© 2024 Shaolong Chen</copyright><lastBuildDate>Wed, 08 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://maolonglong.github.io/hugo-simple/index.xml" rel="self" type="application/rss+xml"/><item><title>og-image</title><link>https://maolonglong.github.io/hugo-simple/og-image/</link><pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate><author>shaolong.chen@outlook.it (Shaolong Chen)</author><guid>https://maolonglong.github.io/hugo-simple/og-image/</guid><description> https://github.com/gohugoio/hugo/blob/c46d603a027a715db604d39f7a2e68a157ef0001/docs/_vendor/github.com/gohugoio/gohugoioTheme/layouts/partials/opengraph/opengraph.html
-1. 2├── _index.md 3└── blog 4 ├── _index.md 5 ├── emoji-support.md 6 ├── markdown-syntax.md 7 ├── math-typesetting.md 8 ├── og-image 9 │ ├── index.md 10 │ └── kateryna-ivanova-etgAEeMw2wc-unsplash.jpg 11 ├── placeholder-text.md 12 └── rich-content.md Page params:
-1title = &amp;#34;og-image&amp;#34; 2date = &amp;#34;2024-05-08&amp;#34; 3images = [&amp;#34;og-image/kateryna-ivanova-etgAEeMw2wc-unsplash.jpg&amp;#34;] 4# OR: 5# images = [&amp;#34;https://example.com/foo.png&amp;#34;] Output HTML:
-1... 2 3&amp;lt;meta property=&amp;#34;og:image&amp;#34; content=&amp;#34;http://localhost:1313/og-image/kateryna-ivanova-etgAEeMw2wc-unsplash.jpg&amp;#34;&amp;gt; 4 5...</description><content:encoded><![CDATA[<blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Hugo Simple</title><link>https://maolonglong.github.io/hugo-simple/</link><description>Recent content on Hugo Simple</description><generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>shaolong.chen@outlook.it (Shaolong Chen)</managingEditor><webMaster>shaolong.chen@outlook.it (Shaolong Chen)</webMaster><copyright>© 2024 Shaolong Chen</copyright><lastBuildDate>Wed, 08 May 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://maolonglong.github.io/hugo-simple/index.xml" rel="self" type="application/rss+xml"/><item><title>og-image</title><link>https://maolonglong.github.io/hugo-simple/og-image/</link><pubDate>Wed, 08 May 2024 00:00:00 +0000</pubDate><author>shaolong.chen@outlook.it (Shaolong Chen)</author><guid>https://maolonglong.github.io/hugo-simple/og-image/</guid><description>&lt;blockquote>
+&lt;p>&lt;a href="https://github.com/gohugoio/hugo/blob/c46d603a027a715db604d39f7a2e68a157ef0001/docs/_vendor/github.com/gohugoio/gohugoioTheme/layouts/partials/opengraph/opengraph.html">https://github.com/gohugoio/hugo/blob/c46d603a027a715db604d39f7a2e68a157ef0001/docs/_vendor/github.com/gohugoio/gohugoioTheme/layouts/partials/opengraph/opengraph.html&lt;/a>&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#cdd6f4;background-color:#1e1e2e;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">&lt;code class="language-plaintext" data-lang="plaintext">&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 1&lt;/span>&lt;span>.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 2&lt;/span>&lt;span>├── _index.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 3&lt;/span>&lt;span>└── blog
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 4&lt;/span>&lt;span> ├── _index.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 5&lt;/span>&lt;span> ├── emoji-support.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 6&lt;/span>&lt;span> ├── markdown-syntax.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 7&lt;/span>&lt;span> ├── math-typesetting.md
+&lt;/span>&lt;/span>&lt;span style="display:flex; background-color:#45475a">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 8&lt;/span>&lt;span> ├── og-image
+&lt;/span>&lt;/span>&lt;span style="display:flex; background-color:#45475a">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c"> 9&lt;/span>&lt;span> │ ├── index.md
+&lt;/span>&lt;/span>&lt;span style="display:flex; background-color:#45475a">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">10&lt;/span>&lt;span> │ └── kateryna-ivanova-etgAEeMw2wc-unsplash.jpg
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">11&lt;/span>&lt;span> ├── placeholder-text.md
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f849c">12&lt;/span>&lt;span> └── rich-content.md&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>
+&lt;p>Page params:&lt;/p></description><content:encoded><![CDATA[<blockquote>
 <p><a href="https://github.com/gohugoio/hugo/blob/c46d603a027a715db604d39f7a2e68a157ef0001/docs/_vendor/github.com/gohugoio/gohugoioTheme/layouts/partials/opengraph/opengraph.html">https://github.com/gohugoio/hugo/blob/c46d603a027a715db604d39f7a2e68a157ef0001/docs/_vendor/github.com/gohugoio/gohugoioTheme/layouts/partials/opengraph/opengraph.html</a></p>
 </blockquote>
 
@@ -73,39 +85,39 @@
 <h2 id="tables">Tables</h2>
 <p>Tables aren&rsquo;t part of the core Markdown spec, but Hugo supports supports them out-of-the-box.</p>
 <table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Age</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Bob</td>
-<td>27</td>
-</tr>
-<tr>
-<td>Alice</td>
-<td>23</td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Name</th>
+          <th>Age</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Bob</td>
+          <td>27</td>
+      </tr>
+      <tr>
+          <td>Alice</td>
+          <td>23</td>
+      </tr>
+  </tbody>
 </table>
 <h3 id="inline-markdown-within-tables">Inline Markdown within tables</h3>
 <table>
-<thead>
-<tr>
-<th>Italics</th>
-<th>Bold</th>
-<th>Code</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><em>italics</em></td>
-<td><strong>bold</strong></td>
-<td><code>code</code></td>
-</tr>
-</tbody>
+  <thead>
+      <tr>
+          <th>Italics</th>
+          <th>Bold</th>
+          <th>Code</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><em>italics</em></td>
+          <td><strong>bold</strong></td>
+          <td><code>code</code></td>
+      </tr>
+  </tbody>
 </table>
 <h2 id="code-blocks">Code Blocks</h2>
 <h3 id="code-block-with-backticks">Code block with backticks</h3>
