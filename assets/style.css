@@ -30,10 +30,6 @@ nav#TableOfContents > ul {
   margin-block-start: 0;
 }
 
-main > p:first-child time {
-  color: var(--text-light);
-}
-
 .icon {
   vertical-align: sub;
   padding-right: 0.25rem;
