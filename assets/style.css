@@ -46,6 +46,6 @@ main > p:first-child time {
   fill: currentColor;
 }
 
-pre span {
+code[class^="language-"] span {
   color: #cdd6f4;
 }
