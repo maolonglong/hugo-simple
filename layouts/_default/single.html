@@ -1,11 +1,14 @@
 {{ define "main" }}
   {{ if eq .Type "blog" }}
     {{ if not .Params.menu }}
-      <p>
-        {{ range (.GetTerms "tags") }}
-          <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
-        {{ end }}
-      </p>
+      {{ $tags := .GetTerms "tags" }}
+      {{ if gt (len $tags) 0 }}
+        <p>
+          {{ range $tags }}
+            <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
+          {{ end }}
+        </p>
+      {{ end }}
     {{ end }}
   {{ end }}
   {{ if .Params.toc }}

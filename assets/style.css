@@ -42,6 +42,8 @@ nav#TableOfContents > ul {
   fill: currentColor;
 }
 
-code[class^="language-"] span {
-  color: #cdd6f4;
+div.highlight code,
+div.highlight pre,
+div.highlight pre span {
+  color: inherit;
 }
