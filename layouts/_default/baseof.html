@@ -16,11 +16,10 @@
     {{- partial "seo_tags.html" . -}}
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
-    {{ $simple := resources.Get "simple.css" | minify }}
-    <link href="{{ $simple.RelPermalink }}" rel="stylesheet" />
-
-    {{ $style := resources.Get "style.css" | minify }}
-    <link href="{{ $style.RelPermalink }}" rel="stylesheet" />
+    {{ $simple := resources.Get "simple.css" }}
+    {{ $style := resources.Get "style.css" }}
+    {{ $css := slice $simple $style | resources.Concat "bundle.css" | minify }}
+    <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 
     {{ with .Params.style }}
       {{ $extra := resources.Get . | minify }}
