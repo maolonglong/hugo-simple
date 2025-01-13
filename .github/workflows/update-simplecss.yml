@@ -1,0 +1,24 @@
+name: Update simple.css
+
+on:
+  schedule:
+    - cron:  '10 16 * * 1'
+  workflow_dispatch:
+
+jobs:
+  try-update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Update simple.css
+        run: |
+          curl -fsSL https://cdn.simplecss.org/simple.css -o ./assets/simple.css
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+            token: ${{ secrets.PAT }}
+            commit-message: 'build: update simple.css'
+            title: 'build: update simple.css'
+            committer: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+            author: 'github-actions[bot] <41898282+github-actions[bot]@users.noreply.github.com>'
+            branch: update-simplecss
