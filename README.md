@@ -24,8 +24,9 @@ Source code and **configuration** can be found at [exampleSite](https://github.c
 You can install the theme manually or use the [quickstart template](https://github.com/maolonglong/hugo-simple-starter).
 
 ```bash
+# Git Submodule (recommend)
 git submodule add https://github.com/maolonglong/hugo-simple.git themes/hugo-simple
-# OR
+# Hugo Modules
 hugo mod get github.com/maolonglong/hugo-simple
 ```
 
