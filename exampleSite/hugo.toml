@@ -43,7 +43,7 @@ hideRSSLink = false
 [params.author]
 name = "Shaolong Chen"
 email = "shaolong.chen@outlook.it"
-fediverse = "@chensl@purr.onl"
+fediverse = "@chensl@mastodon.social"
 
 [[menu.main]]
 name = "Home"
