@@ -18,6 +18,7 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
+        hugo = pkgs.callPackage ./nix/hugo.nix {};
       in {
         formatter = treefmtEval.config.build.wrapper;
         checks = {
@@ -27,14 +28,7 @@
         devShells.default = pkgs.mkShell {
           nativeBuildInputs =
             [
-              (pkgs.hugo.override {
-                buildGoModule = args:
-                  pkgs.buildGoModule (args
-                    // {
-                      # Remove "extended".
-                      tags = [];
-                    });
-              })
+              hugo
             ]
             ++ (with pkgs; [
               bun
