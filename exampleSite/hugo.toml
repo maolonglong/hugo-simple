@@ -1,6 +1,7 @@
 # Basic config
 baseURL = "https://example.com"
 theme = "hugo-simple"
+defaultContentLanguage = "en"
 languageCode = "en"                # zh-Hans
 title = "Hugo Simple"
 copyright = "© 2024 Shaolong Chen"
