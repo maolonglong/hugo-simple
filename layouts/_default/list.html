@@ -3,7 +3,8 @@
     {{ if .Data.Singular }}
       <h3>{{ T "filtering_for" }} "{{ .Title }}"</h3>
       <small>
-        <a href="{{ relURL "blog" }}">{{ T "remove_filter" }}</a>
+        {{ $mainSection := index (.Site.MainSections) 0 }}
+        <a href="{{ relURL $mainSection }}">{{ T "remove_filter" }}</a>
       </small>
     {{ end }}
     {{ if or .Paginator.HasPrev .Paginator.HasNext }}
