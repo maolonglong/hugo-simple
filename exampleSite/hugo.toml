@@ -5,6 +5,7 @@ defaultContentLanguage = "en"
 languageCode = "en"                # zh-Hans
 title = "Hugo Simple"
 copyright = "© 2024 Shaolong Chen"
+mainSections = ["blog"]
 
 # Generate a nice robots.txt for SEO
 enableRobotsTXT = true
