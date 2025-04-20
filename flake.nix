@@ -18,7 +18,6 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         treefmtEval = treefmt-nix.lib.evalModule pkgs ./treefmt.nix;
-        hugo = pkgs.callPackage ./nix/hugo.nix {};
       in {
         formatter = treefmtEval.config.build.wrapper;
         checks = {
@@ -26,14 +25,11 @@
         };
 
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs =
-            [
-              hugo
-            ]
-            ++ (with pkgs; [
-              bun
-              just
-            ]);
+          nativeBuildInputs = with pkgs; [
+            bun
+            hugo
+            just
+          ];
 
           shellHook = ''
             [ -d "$PWD/node_modules" ] || bun install
