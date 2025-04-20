@@ -7,11 +7,11 @@
     {{ end }}
   >
     <span>←</span>
-    <span>Newer posts</span>
+    <span>{{ T "prev_page" }}</span>
   </a>
   {{ if .Paginator.HasNext }}
     <a href="{{ .Paginator.Next.URL }}">
-      <span>Older posts</span>
+      <span>{{ T "next_page" }}</span>
       <span>→</span>
     </a>
   {{ end }}
