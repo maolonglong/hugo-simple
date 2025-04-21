@@ -13,6 +13,18 @@ A [Hugo](https://gohugo.io/)-theme based on [Simple.css](https://simplecss.org/)
 - SEO friendly 🔍
 - Beautiful code highlighting 😻 (thanks [catppuccin/catppuccin](https://github.com/catppuccin/catppuccin))
 
+## Shortcodes
+
+### notice.html
+
+Simple.css supports [showing notices](https://test.simplecss.org/#classes), using the "notice" class. To add a notice to any of your pages, simply use the notice [shortcode](https://gohugo.io/content-management/shortcodes/) like this (Markdown is allowed):
+
+```
+{{< notice >}}
+Note: Don't forget to star the [hugo-simple](https://github.com/maolonglong/hugo-simple) repository. ❤️
+{{< /notice >}}
+```
+
 ## Customisation
 
 The theme provides partials for customising the `<head>`, `<body>` and `<footer>` of every page. Just copy and paste the partials from the theme to your local `layouts/partials/` folder.
