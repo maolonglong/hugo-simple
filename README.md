@@ -25,6 +25,10 @@ Note: Don't forget to star the [hugo-simple](https://github.com/maolonglong/hugo
 {{< /notice >}}
 ```
 
+## Customisation
+
+The theme provides partials for customising the `<head>`, `<body>` and `<footer>` of every page. Just copy and paste the partials from the theme to your local `layouts/partials/` folder.
+
 ## Demo Site
 
 [![screenshot](https://raw.githubusercontent.com/maolonglong/hugo-simple/main/images/tn.png)](https://maolonglong.github.io/hugo-simple/)
