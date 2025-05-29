@@ -1,6 +1,7 @@
 <nav>{{- partial "nav.html" . -}}</nav>
-
-<h1>{{ .Title }}</h1>
+{{- with .Title }}
+<h1>{{ . }}</h1>
+{{- end }}
 {{ with .Description }}
   <p>{{ . }}</p>
 {{ end }}
