@@ -7,7 +7,7 @@ nav a.current {
   border-color: var(--accent) !important;
 }
 
-div.pagination {
+div.flex-between {
   display: flex;
   justify-content: space-between;
 }
