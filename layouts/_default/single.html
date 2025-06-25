@@ -37,13 +37,13 @@
     {{ if or ($pages.Prev .) ($pages.Next .) }}
       <div class="flex-between" style="margin-top: 3rem;">
         {{ with $pages.Prev . }}
-          <a href="{{ .RelPermalink }}" rel="prev">
+          <a href="{{ .RelPermalink }}" rel="prev" aria-label="Previous post: {{ .Title }}">
             <span>←</span>
             <span>{{ .Title }}</span>
           </a>
         {{ end }}
         {{ with $pages.Next . }}
-          <a href="{{ .RelPermalink }}" rel="next">
+          <a href="{{ .RelPermalink }}" rel="next" aria-label="Next post: {{ .Title }}">
             <span>{{ .Title }}</span>
             <span>→</span>
           </a>
