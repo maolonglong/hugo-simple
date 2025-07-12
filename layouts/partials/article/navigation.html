@@ -1,0 +1,20 @@
+{{- $mainSection := index (.Site.MainSections) 0 -}}
+{{- if eq .Type $mainSection -}}
+  {{- $pages := .CurrentSection.Pages.ByWeight -}}
+  {{- if or ($pages.Prev .) ($pages.Next .) -}}
+    <div class="flex-between" style="margin-top: 3rem;">
+      {{- with $pages.Prev . -}}
+        <a href="{{ .RelPermalink }}" rel="prev" aria-label="Previous post: {{ .Title }}">
+          <span>←</span>
+          <span>{{ .Title }}</span>
+        </a>
+      {{- end -}}
+      {{- with $pages.Next . -}}
+        <a href="{{ .RelPermalink }}" rel="next" aria-label="Next post: {{ .Title }}">
+          <span>{{ .Title }}</span>
+          <span>→</span>
+        </a>
+      {{- end -}}
+    </div>
+  {{- end -}}
+{{- end -}}
