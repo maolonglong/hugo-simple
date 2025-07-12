@@ -1,0 +1,16 @@
+{{- $mainSection := index (.Site.MainSections) 0 -}}
+{{- if eq .Type $mainSection -}}
+  {{- if not .Params.menu -}}
+    <p>
+      <i>
+        <time
+          style="color: var(--text-light);"
+          datetime="{{ .Date.Format "2006-01-02" }}"
+          pubdate
+        >
+          {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+        </time>
+      </i>
+    </p>
+  {{- end -}}
+{{- end -}}

@@ -1,0 +1,11 @@
+{{- $mainSection := index (.Site.MainSections) 0 -}}
+{{- if eq .Type $mainSection -}}
+  {{- $tags := .GetTerms "tags" -}}
+  {{- if gt (len $tags) 0 -}}
+    <p>
+      {{- range $tags -}}
+        <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
+      {{- end -}}
+    </p>
+  {{- end -}}
+{{- end -}}
