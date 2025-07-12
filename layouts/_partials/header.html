@@ -1,6 +1,8 @@
 <nav>{{- partial "nav.html" . -}}</nav>
-{{- with .Title }}
-  <h1>{{ . }}</h1>
+{{- if not (eq .Kind "404") }}
+  {{- with .Title }}
+    <h1>{{ . }}</h1>
+  {{- end }}
 {{- end }}
 {{ with .Description }}
   <p>{{ . }}</p>
