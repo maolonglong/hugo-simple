@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{- partial "favicon.html" . -}}
+    {{- partial "meta/favicon.html" . -}}
     <title>
       {{- block "title" . -}}
         {{- if not .IsHome -}}
@@ -13,7 +13,7 @@
       {{- end -}}
     </title>
 
-    {{- partial "seo_tags.html" . -}}
+    {{- partial "meta/seo_tags.html" . -}}
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
     {{ $simple := resources.Get "simple.css" }}
@@ -38,24 +38,24 @@
     <!-- A partial to be overwritten by the user.
   Simply place a custom_head.html into
   your local /layouts/partials-directory -->
-    {{- partial "custom_head.html" . -}}
+    {{- partial "site/head_end.html" . -}}
   </head>
 
   <body>
     <header>
-      {{ partial "header.html" . }}
+      {{ partial "site/header.html" . }}
     </header>
     <main>
       {{ block "main" . }}{{ end }}
     </main>
     <footer>
-      {{ partial "custom_footer.html" . }}
-      {{ partial "footer.html" . }}
+      {{ partial "site/custom_footer.html" . }}
+      {{ partial "site/footer.html" . }}
     </footer>
 
     <!-- A partial to be overwritten by the user.
   Simply place a custom_body.html into
   your local /layouts/partials-directory -->
-    {{- partial "custom_body.html" . -}}
+    {{- partial "site/body_end.html" . -}}
   </body>
 </html>

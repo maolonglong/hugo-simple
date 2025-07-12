@@ -8,24 +8,11 @@
       </small>
     {{ end }}
     {{ if or .Paginator.HasPrev .Paginator.HasNext }}
-      {{- partial "pagination.html" . -}}
+      {{- partial "components/pagination.html" . -}}
     {{ end }}
     <ul class="blog-posts">
       {{ range .Paginator.Pages }}
-        <li>
-          <span>
-            <i>
-              <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-                {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
-              </time>
-            </i>
-          </span>
-          {{ if .Params.link }}
-            <a href="{{ .Params.link }}" target="_blank">{{ .Title }} ↪</a>
-          {{ else }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-          {{ end }}
-        </li>
+        {{ partial "list/item.html" . }}
       {{ else }}
         <li>{{ T "no_posts" }}</li>
       {{ end }}
