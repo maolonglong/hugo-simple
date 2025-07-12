@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{- partial "meta/favicon.html" . -}}
+    {{- partial "favicon.html" . -}}
     <title>
       {{- block "title" . -}}
         {{- if not .IsHome -}}
@@ -13,7 +13,7 @@
       {{- end -}}
     </title>
 
-    {{- partial "meta/seo_tags.html" . -}}
+    {{- partial "seo_tags.html" . -}}
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
     {{ $simple := resources.Get "simple.css" }}
@@ -43,14 +43,14 @@
 
   <body>
     <header>
-      {{ partial "site/header.html" . }}
+      {{ partial "header.html" . }}
     </header>
     <main>
       {{ block "main" . }}{{ end }}
     </main>
     <footer>
       {{ partial "custom_footer.html" . }}
-      {{ partial "site/footer.html" . }}
+      {{ partial "footer.html" . }}
     </footer>
 
     <!-- A partial to be overwritten by the user.

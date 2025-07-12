@@ -1,12 +1,54 @@
 {{ define "main" }}
-  {{ partial "article/meta.html" . }}
-  {{ partial "article/toc.html" . }}
-
-
+  {{ $mainSection := index (.Site.MainSections) 0 }}
+  {{ if eq .Type $mainSection }}
+    {{ if not .Params.menu }}
+      <p>
+        <i>
+          <time
+            style="color: var(--text-light);"
+            datetime="{{ .Date.Format "2006-01-02" }}"
+            pubdate
+          >
+            {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
+          </time>
+        </i>
+      </p>
+    {{ end }}
+  {{ end }}
+  {{ if .Params.toc }}
+    <details>
+      <summary>Table of Contents</summary>
+      {{ .TableOfContents }}
+    </details>
+  {{ end }}
   <content>
     {{ .Content }}
   </content>
-
-  {{ partial "article/tags.html" . }}
-  {{ partial "article/navigation.html" . }}
+  {{ if eq .Type $mainSection }}
+    {{ $tags := .GetTerms "tags" }}
+    {{ if gt (len $tags) 0 }}
+      <p>
+        {{ range $tags }}
+          <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
+        {{ end }}
+      </p>
+    {{ end }}
+    {{ $pages := .CurrentSection.Pages.ByWeight }}
+    {{ if or ($pages.Prev .) ($pages.Next .) }}
+      <div class="flex-between" style="margin-top: 3rem;">
+        {{ with $pages.Prev . }}
+          <a href="{{ .RelPermalink }}" rel="prev" aria-label="Previous post: {{ .Title }}">
+            <span>←</span>
+            <span>{{ .Title }}</span>
+          </a>
+        {{ end }}
+        {{ with $pages.Next . }}
+          <a href="{{ .RelPermalink }}" rel="next" aria-label="Next post: {{ .Title }}">
+            <span>{{ .Title }}</span>
+            <span>→</span>
+          </a>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
 {{ end }}
