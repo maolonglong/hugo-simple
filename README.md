@@ -1,5 +1,12 @@
 # Hugo ʕ•ᴥ•ʔ Simple
 
+> [!NOTE]
+> **This theme is stable and in maintenance mode.** It is intentionally minimal and considered feature-complete. I am not planning to add new features as I believe in keeping the core functionality lean and focused rather than adding potentially bloated features. If you need additional functionality, the theme is designed for easy extension through three approaches (from simple to complex):
+>
+> 1. **Custom partials:** Use the provided `custom_head.html`, `custom_body.html`, and `custom_footer.html` hooks
+> 2. **Layout overrides:** Hugo's layout precedence allows you to override any theme template in your site's `layouts/` directory
+> 3. **Fork the theme:** Create your own version with full customization freedom
+
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.146.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.146.0)
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
