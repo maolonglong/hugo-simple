@@ -34,7 +34,7 @@ Note: Don't forget to star the [hugo-simple](https://github.com/maolonglong/hugo
 
 ## Customisation
 
-The theme provides partials for customising the `<head>`, `<body>` and `<footer>` of every page. Just copy and paste the partials from the theme to your local `layouts/partials/` folder.
+The theme provides partials for customising the `<head>`, `<body>` and `<footer>` of every page. Just copy and paste the partials from the theme to your local `layouts/_partials/` folder.
 
 ## Demo Site
 
