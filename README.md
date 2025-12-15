@@ -1,7 +1,7 @@
 # Hugo ʕ•ᴥ•ʔ Simple
 
 > [!NOTE]
-> **This theme is stable and in maintenance mode.** It is intentionally minimal and considered feature-complete. I am not planning to add new features as I believe in keeping the core functionality lean and focused rather than adding potentially bloated features. If you need additional functionality, the theme is designed for easy extension through three approaches (from simple to complex):
+> **This theme is stable and in maintenance mode.** It is intentionally minimal and considered feature-complete. I do not plan to add new features as I believe in keeping the core functionality lean and focused rather than adding potentially bloated features. If you need additional functionality, the theme is designed to be easily extensible through three approaches (from simple to complex):
 >
 > 1. **Custom partials:** Use the provided `custom_head.html`, `custom_body.html`, and `custom_footer.html` hooks
 > 2. **Layout overrides:** Hugo's layout precedence allows you to override any theme template in your site's `layouts/` directory
@@ -10,14 +10,14 @@
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.146.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.146.0)
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
-A [Hugo](https://gohugo.io/)-theme based on [Simple.css](https://simplecss.org/) and [Bear Blog](https://bearblog.dev).
+A [Hugo](https://gohugo.io/) theme based on [Simple.css](https://simplecss.org/) and [Bear Blog](https://bearblog.dev).
 
 ## Features
 
 - No-JavaScript, high performance ⚡
 - Table of Contents 📌
 - Dark mode 🌗
-- SEO friendly 🔍
+- SEO-friendly 🔍
 - Beautiful code highlighting 😻 (thanks [catppuccin/catppuccin](https://github.com/catppuccin/catppuccin))
 
 ## Shortcodes
@@ -26,15 +26,15 @@ A [Hugo](https://gohugo.io/)-theme based on [Simple.css](https://simplecss.org/)
 
 Simple.css supports [showing notices](https://test.simplecss.org/#classes), using the "notice" class. To add a notice to any of your pages, simply use the notice [shortcode](https://gohugo.io/content-management/shortcodes/) like this (Markdown is allowed):
 
-```
+```markdown
 {{< notice >}}
 Note: Don't forget to star the [hugo-simple](https://github.com/maolonglong/hugo-simple) repository. ❤️
 {{< /notice >}}
 ```
 
-## Customisation
+## Customization
 
-The theme provides partials for customising the `<head>`, `<body>` and `<footer>` of every page. Just copy and paste the partials from the theme to your local `layouts/_partials/` folder.
+The theme provides partials for customizing the `<head>`, `<body>` and `<footer>` of every page. Just copy and paste the partials from the theme to your local `layouts/_partials/` folder.
 
 ## Demo Site
 
@@ -47,7 +47,7 @@ Source code and **configuration** can be found at [exampleSite](https://github.c
 You can install the theme manually or use the [quickstart template](https://github.com/maolonglong/hugo-simple-starter).
 
 ```bash
-# Git Submodule (recommend)
+# Git Submodule (recommended)
 git submodule add https://github.com/maolonglong/hugo-simple.git themes/hugo-simple
 # Hugo Modules
 hugo mod get github.com/maolonglong/hugo-simple
