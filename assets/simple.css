@@ -398,6 +398,10 @@ details[open] > :last-child {
   margin-bottom: 0;
 }
 
+details h2:first-of-type {
+  margin-top: 0;
+}
+
 /* Format tables */
 table {
   border-collapse: collapse;
@@ -684,6 +688,10 @@ dialog {
 dialog::backdrop {
   background-color: var(--bg);
   opacity: 0.8;
+}
+
+dialog h2:first-of-type {
+  margin-top: 0;
 }
 
 @media only screen and (max-width: 720px) {
