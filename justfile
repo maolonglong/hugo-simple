@@ -14,13 +14,11 @@ build:
   hugo --minify --gc --printI18nWarnings --printPathWarnings --panicOnWarning --destination ../public --source ./exampleSite --themesDir ../.. --baseURL https://maolonglong.github.io/hugo-simple/
 
 fmt:
-  # TODO: https://github.com/numtide/treefmt-nix/issues/112
-  nix fmt
+  git ls-files --cached --others --exclude-standard -z '*.toml' | xargs -0 taplo fmt
   bun run fmt
 
 check:
-  # TODO: https://github.com/numtide/treefmt-nix/issues/112
-  nix flake check
+  git ls-files --cached --others --exclude-standard -z '*.toml' | xargs -0 taplo fmt --check
   bun run check
 
 # Regenerate the class-based code highlighting CSS (light + dark) from two Chroma styles.

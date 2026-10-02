@@ -8,7 +8,6 @@
 > 3. **Fork the theme:** Create your own version with full customization freedom
 
 [![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.158.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.158.0)
-[![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
 A [Hugo](https://gohugo.io/) theme based on [Simple.css](https://simplecss.org/) and [Bear Blog](https://bearblog.dev).
 
@@ -62,6 +61,21 @@ git submodule add https://github.com/maolonglong/hugo-simple.git themes/hugo-sim
 # Hugo Modules
 hugo mod get github.com/maolonglong/hugo-simple
 ```
+
+## Development
+
+Install [mise](https://mise.jdx.dev/getting-started.html) and clone this repository into a directory named `hugo-simple` so the example site's theme lookup works. Tool versions are pinned in `mise.toml` and `mise.lock`.
+
+```bash
+mise trust
+mise install --locked
+mise exec -- bun install --frozen-lockfile
+mise exec -- just check
+mise exec -- just build
+mise exec -- just serve
+```
+
+Run `mise exec -- just fmt` to format TOML, templates, and theme CSS. With mise activated in your shell, you can run `just` directly.
 
 ## Special Thanks 🎁
 
