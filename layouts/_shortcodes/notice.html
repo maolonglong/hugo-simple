@@ -1,3 +1,3 @@
-<p class="notice">
-  {{ .Inner | .Page.RenderString }}
-</p>
+<div class="notice">
+  {{ .InnerDeindent | .Page.RenderString (dict "display" "block") }}
+</div>

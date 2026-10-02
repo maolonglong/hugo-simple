@@ -2,7 +2,7 @@
 baseURL = "https://example.com"
 theme = "hugo-simple"
 defaultContentLanguage = "en"
-languageCode = "en"                # zh-Hans
+locale = "en"                      # zh-Hans
 title = "Hugo Simple"
 copyright = "© 2024 Shaolong Chen"
 mainSections = ["blog"]
@@ -31,8 +31,8 @@ endLevel = 3
 [markup.highlight]
 lineNos = true
 lineNumbersInTable = false
-noClasses = true
-style = "catppuccin-mocha"
+# Class-based output follows the light/dark scheme, see assets/chroma.css.
+noClasses = false
 
 [params]
 title = "Hugo Simple"

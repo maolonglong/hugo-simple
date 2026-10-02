@@ -21,3 +21,9 @@ It is free, multilingual, optimized for search engines, no-nonsense, responsive,
 light, and fast. Really fast.
 
 Made with 💟 by [Shaolong Chen](https://github.com/maolonglong).
+
+{{< notice >}}
+Note: Don't forget to star the [hugo-simple](https://github.com/maolonglong/hugo-simple) repository. ❤️
+
+Notices accept **Markdown**, including multiple paragraphs.
+{{< /notice >}}

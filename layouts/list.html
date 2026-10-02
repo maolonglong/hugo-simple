@@ -1,43 +1,56 @@
+{{ define "canonical" -}}
+  {{- if gt .Paginator.PageNumber 1 -}}
+    {{- with urls.Parse .Permalink -}}
+      {{- printf "%s://%s%s" .Scheme .Host $.Paginator.URL -}}
+    {{- end -}}
+  {{- else -}}
+    {{- .Permalink -}}
+  {{- end -}}
+{{- end }}
+
 {{ define "main" }}
-  <content>
-    {{ if .Data.Singular }}
-      <h3>{{ T "filtering_for" }} "{{ .Title }}"</h3>
+  {{ if eq .Kind "term" }}
+    <p>
       <small>
-        {{ $mainSection := index (.Site.MainSections) 0 }}
-        <a href="{{ relURL $mainSection }}">{{ T "remove_filter" }}</a>
-      </small>
-    {{ end }}
-    {{ if or .Paginator.HasPrev .Paginator.HasNext }}
-      {{- partial "pagination.html" . -}}
-    {{ end }}
-    <ul class="blog-posts">
-      {{ range .Paginator.Pages }}
-        <li>
-          <span>
-            <i>
-              <time datetime="{{ .Date.Format "2006-01-02" }}" pubdate>
-                {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
-              </time>
-            </i>
-          </span>
-          {{ if .Params.link }}
-            <a href="{{ .Params.link }}" target="_blank">{{ .Title }} ↪</a>
-          {{ else }}
-            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ T "filtering_for" }} "{{ .Title }}" ·
+        {{ with site.MainSections }}
+          {{ with site.GetPage (index . 0) }}
+            <a href="{{ .RelPermalink }}">{{ T "remove_filter" }}</a>
           {{ end }}
-        </li>
-      {{ else }}
-        <li>{{ T "no_posts" }}</li>
-      {{ end }}
-    </ul>
-    {{ if not .Data.Singular }}
-      <small>
-        <div>
-          {{ range .Site.Taxonomies.tags }}
-            <a href="{{ .Page.RelPermalink }}">#{{ .Page.LinkTitle }}</a>&nbsp;&nbsp;
-          {{ end }}
-        </div>
+        {{ end }}
       </small>
+    </p>
+  {{ end }}
+  <ul class="blog-posts">
+    {{ range .Paginator.Pages }}
+      <li>
+        {{ if not .Date.IsZero }}
+          <time datetime="{{ .Date.Format "2006-01-02" }}">
+            {{ .Date.Format (default "2006-01-02" site.Params.dateFormat) }}
+          </time>
+        {{ end }}
+        {{ if .Params.link }}
+          <a href="{{ .Params.link }}" target="_blank" rel="noopener">{{ .Title }} ↪</a>
+        {{ else }}
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        {{ end }}
+      </li>
+    {{ else }}
+      <li>{{ T "no_posts" }}</li>
     {{ end }}
-  </content>
+  </ul>
+  {{ if or .Paginator.HasPrev .Paginator.HasNext }}
+    {{- partial "pagination.html" . -}}
+  {{ end }}
+  {{ if ne .Kind "term" }}
+    {{ with site.Taxonomies.tags }}
+      <p class="tags">
+        <small>
+          {{ range . }}
+            <a href="{{ .Page.RelPermalink }}">#{{ .Page.LinkTitle }}</a>
+          {{ end }}
+        </small>
+      </p>
+    {{ end }}
+  {{ end }}
 {{ end }}

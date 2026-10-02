@@ -1,47 +1,20 @@
-<!-- Primary Meta Tags -->
-<meta
-  name="title"
-  content="{{ with .Title -}}
-    {{ . }}
+{{- $description := .Description -}}
+{{- if not $description -}}
+  {{- if .IsPage -}}
+    {{- $description = .Summary | plainify | htmlUnescape | chomp -}}
   {{- else -}}
-    {{ .Site.Title }}
-  {{- end }}"
-/>
-<meta
-  name="description"
-  content="{{ with .Description -}}
-    {{ . }}
-  {{- else -}}
-    {{ if .IsPage -}}
-      {{ .Summary }}
-    {{- else -}}
-      {{ with .Site.Params.description }}{{ . }}{{ end }}
-    {{- end }}
-  {{- end }}"
-/>
-<meta
-  name="keywords"
-  content="{{ if .IsPage -}}
-    {{ range $index, $tag := .Params.tags }}{{ $tag }},{{ end }}
-  {{- else -}}
-    {{ range $plural, $terms := .Site.Taxonomies -}}
-      {{ range $term, $val := $terms }}{{ printf "%s," $term }}{{ end }}
-    {{- end }}
+    {{- $description = site.Params.description -}}
   {{- end -}}
-  "
-/>
-{{ with .Site.Params.author.name }}
-  <meta name="author" content="{{ . }}" />
+{{- end -}}
+<meta name="description" content="{{ $description }}" />
+{{ with and .IsPage .Params.tags }}
+  <meta name="keywords" content="{{ delimit . ", " }}" />
+{{ end }}
+{{ with partial "author.html" }}
+  {{ with .name }}
+    <meta name="author" content="{{ . }}" />
+  {{ end }}
 {{ end }}
 
-
-<!-- Open Graph / Facebook -->
 {{ partial "opengraph.html" . }}
-
-
-<!-- Twitter -->
 {{ partial "twitter_cards.html" . }}
-
-
-<!-- Microdata -->
-{{ partial "schema.html" . }}

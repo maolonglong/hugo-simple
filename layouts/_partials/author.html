@@ -1,0 +1,10 @@
+{{- /* Returns params.author as a map: either a table (name, email, fediverse) or a plain name string. */ -}}
+{{- $author := dict -}}
+{{- with site.Params.author -}}
+  {{- if reflect.IsMap . -}}
+    {{- $author = . -}}
+  {{- else -}}
+    {{- $author = dict "name" . -}}
+  {{- end -}}
+{{- end -}}
+{{- return $author -}}

@@ -2,14 +2,42 @@ body {
   -webkit-text-size-adjust: 100%; /* prevent Mobile Safari from adjusting font sizes */
 }
 
-nav a.current {
-  color: var(--accent) !important;
-  border-color: var(--accent) !important;
-}
-
-div.flex-between {
+.flex-between {
   display: flex;
   justify-content: space-between;
+}
+
+.flex-between > a[rel="next"] {
+  margin-left: auto;
+}
+
+.post-nav {
+  margin-top: 3rem;
+}
+
+.post-nav a {
+  display: flex;
+  flex-direction: column;
+  max-width: 48%;
+  text-decoration: none;
+}
+
+.post-nav a[rel="next"] {
+  text-align: right;
+}
+
+.post-nav small {
+  color: var(--text-light);
+}
+
+.post-nav .title {
+  text-decoration: underline;
+}
+
+.post-date,
+.blog-posts time {
+  color: var(--text-light);
+  font-style: italic;
 }
 
 ul.blog-posts {
@@ -21,9 +49,12 @@ ul.blog-posts > li {
   display: flex;
 }
 
-ul.blog-posts > li span {
+ul.blog-posts > li > time {
   flex: 0 0 130px;
-  color: var(--text-light);
+}
+
+.tags a:not(:last-child) {
+  margin-inline-end: 0.5em;
 }
 
 nav#TableOfContents > ul {
