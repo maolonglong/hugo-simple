@@ -4,3 +4,7 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+  - package-ecosystem: "bun"
+    directory: "/"
+    schedule:
+      interval: "weekly"
