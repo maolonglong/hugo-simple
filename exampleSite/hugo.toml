@@ -29,8 +29,6 @@ unsafe = true
 startLevel = 2
 endLevel = 3
 [markup.highlight]
-lineNos = true
-lineNumbersInTable = false
 # Class-based output follows the light/dark scheme, see assets/chroma.css.
 noClasses = false
 
