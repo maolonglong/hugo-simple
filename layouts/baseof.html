@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ .Params.lang | default .Lang | default "en" }}">
+<html lang="{{ .Params.lang | default .Language.Locale }}">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,35 +9,46 @@
         {{- if not .IsHome -}}
           {{ with .Title }}{{ . }}&nbsp;|&nbsp;{{ end }}
         {{- end -}}
-        {{ .Site.Title }}
+        {{ site.Title }}
       {{- end -}}
     </title>
 
     {{- partial "seo_tags.html" . -}}
-    <meta name="referrer" content="no-referrer-when-downgrade" />
+    {{ if ne .Kind "404" }}
+      <link rel="canonical" href="{{ block "canonical" . }}{{ .Permalink }}{{ end }}" />
+    {{ end }}
 
     {{ $simple := resources.Get "simple.css" }}
+    {{ $chroma := resources.Get "chroma.css" }}
     {{ $style := resources.Get "style.css" }}
-    {{ $css := slice $simple $style | resources.Concat "bundle.css" | minify }}
+    {{ $css := slice $simple $chroma $style | resources.Concat "bundle.css" | minify | fingerprint }}
     <link href="{{ $css.RelPermalink }}" rel="stylesheet" />
 
     {{ with .Params.style }}
-      {{ $extra := resources.Get . | minify }}
-      <link href="{{ $extra.RelPermalink }}" rel="stylesheet" />
+      {{ with resources.Get . }}
+        {{ $extra := . | minify | fingerprint }}
+        <link href="{{ $extra.RelPermalink }}" rel="stylesheet" />
+      {{ else }}
+        {{ warnf "style: asset %q not found in page %q" $.Params.style $.Path }}
+      {{ end }}
     {{ end }}
 
     {{ with .OutputFormats.Get "rss" -}}
-      {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .RelPermalink $.Site.Title | safeHTML }}
+      <link
+        rel="{{ .Rel }}"
+        type="{{ .MediaType.Type }}"
+        href="{{ .RelPermalink }}"
+        title="{{ site.Title }}"
+      />
     {{ end -}}
 
-    {{ with .Site.Params.author.fediverse }}
-      <meta name="fediverse:creator" content="{{ . }}" />
+    {{ with partial "author.html" }}
+      {{ with .fediverse }}
+        <meta name="fediverse:creator" content="{{ . }}" />
+      {{ end }}
     {{ end }}
 
-
-    <!-- A partial to be overwritten by the user.
-  Simply place a custom_head.html into
-  your local /layouts/partials-directory -->
+    {{/* Override by placing a custom_head.html in your site's layouts/_partials directory. */}}
     {{- partial "custom_head.html" . -}}
   </head>
 
@@ -53,9 +64,7 @@
       {{ partial "footer.html" . }}
     </footer>
 
-    <!-- A partial to be overwritten by the user.
-  Simply place a custom_body.html into
-  your local /layouts/partials-directory -->
+    {{/* Override by placing a custom_body.html in your site's layouts/_partials directory. */}}
     {{- partial "custom_body.html" . -}}
   </body>
 </html>

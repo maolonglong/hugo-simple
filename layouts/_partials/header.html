@@ -1,4 +1,4 @@
-<nav>{{- partial "nav.html" . -}}</nav>
+<nav aria-label="{{ T "menu" }}">{{- partial "nav.html" . -}}</nav>
 {{- if not (eq .Kind "404") }}
   {{- with .Title }}
     <h1>{{ . }}</h1>

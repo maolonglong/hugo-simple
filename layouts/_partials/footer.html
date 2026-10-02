@@ -1,9 +1,9 @@
-{{ with .Site.Copyright }}
+{{ with site.Copyright }}
   <span>{{ . }}</span>
 {{ end }}
-{{ if not .Site.Params.hideMadeWithLine }}
+{{ if not site.Params.hideMadeWithLine }}
   <span>
-    {{ if .Site.Copyright }}|{{ end }}
+    {{ if site.Copyright }}|{{ end }}
     {{ T "made_with" }}
     <a href="https://github.com/maolonglong/hugo-simple/">Hugo ʕ•ᴥ•ʔ Simple</a>
   </span>

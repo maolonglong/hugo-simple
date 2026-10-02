@@ -7,7 +7,7 @@
 > 2. **Layout overrides:** Hugo's layout precedence allows you to override any theme template in your site's `layouts/` directory
 > 3. **Fork the theme:** Create your own version with full customization freedom
 
-[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.146.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.146.0)
+[![Minimum Hugo Version](https://img.shields.io/static/v1?label=min-HUGO-version&message=>=v0.158.0&color=blue&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.158.0)
 [![built with nix](https://builtwithnix.org/badge.svg)](https://builtwithnix.org)
 
 A [Hugo](https://gohugo.io/) theme based on [Simple.css](https://simplecss.org/) and [Bear Blog](https://bearblog.dev).
@@ -18,7 +18,7 @@ A [Hugo](https://gohugo.io/) theme based on [Simple.css](https://simplecss.org/)
 - Table of Contents 📌
 - Dark mode 🌗
 - SEO-friendly 🔍
-- Beautiful code highlighting 😻 (thanks [catppuccin/catppuccin](https://github.com/catppuccin/catppuccin))
+- Code highlighting that follows light/dark mode 😻 (GitHub palette, see below)
 
 ## Shortcodes
 
@@ -31,6 +31,16 @@ Simple.css supports [showing notices](https://test.simplecss.org/#classes), usin
 Note: Don't forget to star the [hugo-simple](https://github.com/maolonglong/hugo-simple) repository. ❤️
 {{< /notice >}}
 ```
+
+## Author
+
+`params.author` is optional and can be a plain name (`author = "Jane"`) or a table with `name`, `email` and `fediverse`. The name feeds the `author` meta tag, the email and name feed the RSS feed, and `fediverse` adds a `fediverse:creator` tag.
+
+## Code highlighting
+
+Set `noClasses = false` under `[markup.highlight]` in your site config to highlight code with CSS classes. The theme then ships a light and a dark palette (`assets/chroma.css`, GitHub styles) that switch with the visitor's color scheme. Without it, Hugo falls back to inline styles with a single fixed `style`.
+
+To use other [Chroma styles](https://gohugo.io/quick-reference/syntax-highlighting-styles/), run `just chroma <light-style> <dark-style>` to regenerate `assets/chroma.css`, or override it in your own `assets/` folder.
 
 ## Customization
 

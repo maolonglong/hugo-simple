@@ -7,6 +7,7 @@ demosite = "https://maolonglong.github.io/hugo-simple"
 
 tags = ["blog", "minimal", "fast", "dark mode"]
 features = ["favicon", "no javascript", "rss", "dark mode"]
+min_version = "0.158.0"
 
 [author]
 name = "Shaolong Chen"

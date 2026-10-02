@@ -1,18 +1,16 @@
-<div class="pagination flex-between">
-  <a
-    {{ if .Paginator.HasPrev }}
-      href="{{ .Paginator.Prev.URL }}"
-    {{ else }}
-      style="visibility: hidden;"
+<nav class="pagination flex-between" aria-label="{{ T "pagination" }}">
+  {{ with .Paginator }}
+    {{ if .HasPrev }}
+      <a href="{{ .Prev.URL }}" rel="prev">
+        <span aria-hidden="true">←</span>
+        <span>{{ T "prev_page" }}</span>
+      </a>
     {{ end }}
-  >
-    <span>←</span>
-    <span>{{ T "prev_page" }}</span>
-  </a>
-  {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}">
-      <span>{{ T "next_page" }}</span>
-      <span>→</span>
-    </a>
+    {{ if .HasNext }}
+      <a href="{{ .Next.URL }}" rel="next">
+        <span>{{ T "next_page" }}</span>
+        <span aria-hidden="true">→</span>
+      </a>
+    {{ end }}
   {{ end }}
-</div>
+</nav>

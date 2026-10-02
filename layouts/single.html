@@ -1,54 +1,49 @@
 {{ define "main" }}
-  {{ $mainSection := index (.Site.MainSections) 0 }}
-  {{ if eq .Type $mainSection }}
-    {{ if not .Params.menu }}
-      <p>
-        <i>
-          <time
-            style="color: var(--text-light);"
-            datetime="{{ .Date.Format "2006-01-02" }}"
-            pubdate
-          >
-            {{ .Date.Format (default "2006-01-02" .Site.Params.dateFormat) }}
-          </time>
-        </i>
-      </p>
-    {{ end }}
+  {{ $isPost := in site.MainSections .Type }}
+  {{ if and $isPost (not .Params.menu) (not .Date.IsZero) }}
+    <p class="post-date">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">
+        {{ .Date.Format (default "2006-01-02" site.Params.dateFormat) }}
+      </time>
+    </p>
   {{ end }}
   {{ if .Params.toc }}
-    <details>
-      <summary>Table of Contents</summary>
-      {{ .TableOfContents }}
-    </details>
+    {{ $toc := .TableOfContents }}
+    {{ if strings.TrimSpace ($toc | plainify) }}
+      <details>
+        <summary>{{ T "toc" }}</summary>
+        {{ $toc }}
+      </details>
+    {{ end }}
   {{ end }}
-  <content>
-    {{ .Content }}
-  </content>
-  {{ if eq .Type $mainSection }}
-    {{ $tags := .GetTerms "tags" }}
-    {{ if gt (len $tags) 0 }}
-      <p>
-        {{ range $tags }}
-          <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>&nbsp;&nbsp;
+  {{ .Content }}
+  {{ if $isPost }}
+    {{ with .GetTerms "tags" }}
+      <p class="tags">
+        {{ range . }}
+          <a href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a>
         {{ end }}
       </p>
     {{ end }}
-    {{ $pages := .CurrentSection.Pages.ByWeight }}
-    {{ if or ($pages.Prev .) ($pages.Next .) }}
-      <div class="flex-between" style="margin-top: 3rem;">
-        {{ with $pages.Prev . }}
-          <a href="{{ .RelPermalink }}" rel="prev" aria-label="Previous post: {{ .Title }}">
-            <span>←</span>
-            <span>{{ .Title }}</span>
+    {{ $pages := .CurrentSection.RegularPages }}
+    {{/* Hugo's Next is the newer page and Prev the older one; list order is newest first. */}}
+    {{ $newer := $pages.Next . }}
+    {{ $older := $pages.Prev . }}
+    {{ if or $newer $older }}
+      <nav class="post-nav flex-between" aria-label="{{ T "post_navigation" }}">
+        {{ with $newer }}
+          <a href="{{ .RelPermalink }}" rel="prev">
+            <small><span aria-hidden="true">←</span> {{ T "newer_post" }}</small>
+            <span class="title">{{ .Title }}</span>
           </a>
         {{ end }}
-        {{ with $pages.Next . }}
-          <a href="{{ .RelPermalink }}" rel="next" aria-label="Next post: {{ .Title }}">
-            <span>{{ .Title }}</span>
-            <span>→</span>
+        {{ with $older }}
+          <a href="{{ .RelPermalink }}" rel="next">
+            <small>{{ T "older_post" }} <span aria-hidden="true">→</span></small>
+            <span class="title">{{ .Title }}</span>
           </a>
         {{ end }}
-      </div>
+      </nav>
     {{ end }}
   {{ end }}
 {{ end }}
