@@ -4,13 +4,13 @@
   "workspaces": {
     "": {
       "devDependencies": {
-        "prettier": "^3.5.1",
+        "prettier": "^3.9.10",
         "prettier-plugin-go-template": "^0.0.15",
       },
     },
   },
   "packages": {
-    "prettier": ["prettier@3.9.9", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg=="],
+    "prettier": ["prettier@3.9.10", "", { "bin": { "prettier": "bin/prettier.cjs" } }, "sha512-skGHTH1Yb9QvaTC4hWnRTzEYtCpApF0UMBPz+t/0ZPzP8ihefo/btKd+QA7pUE0fEwA1SbS/NmhyEcstdXOIdA=="],
 
     "prettier-plugin-go-template": ["prettier-plugin-go-template@0.0.15", "", { "dependencies": { "ulid": "^2.3.0" }, "peerDependencies": { "prettier": "^3.0.0" } }, "sha512-WqU92E1NokWYNZ9mLE6ijoRg6LtIGdLMePt2C7UBDjXeDH9okcRI3zRqtnWR4s5AloiqyvZ66jNBAa9tmRY5EQ=="],
 
